@@ -2,6 +2,25 @@
   "name": "@robotpajamas/svelte-heroicons",
   "version": "2.0.15",
   "description": "Svelte wrappers for the Heroicons library.",
+  "homepage": "https://github.com/robotpajamas/svelte-heroicons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robotpajamas/svelte-heroicons"
+  },
+  "author": "SJ <suresh@robotpajamas.com>",
+  "bugs": {
+    "url": "https://github.com/robotpajamas/svelte-heroicons/issues"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    }
+  },
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "keywords": [
     "svelte",
     "svelte3",
@@ -10,13 +29,6 @@
     "tailwindcss",
     "icons"
   ],
-  "author": "SJ <suresh@robotpajamas.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/robotpajamas/svelte-heroicons/issues"
-  },
-  "homepage": "https://github.com/robotpajamas/svelte-heroicons",
-  "repository": "github:robotpajamas/svelte-heroicons",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -29,12 +41,6 @@
     "format": "prettier --ignore-path .gitignore --write .",
     "lint": "prettier --ignore-path .gitignore --check . && eslint --ignore-path .gitignore .",
     "lint:fix": "npm run format && eslint --ignore-path .gitignore . --fix"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
-    }
   },
   "peerDependencies": {
     "svelte": "^3.54.0"
@@ -59,8 +65,5 @@
     "tslib": "^2.5.0",
     "typescript": "^4.9.5",
     "vite": "^4.1.1"
-  },
-  "svelte": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "type": "module"
+  }
 }
