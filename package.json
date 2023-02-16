@@ -1,6 +1,6 @@
 {
   "name": "@robotpajamas/svelte-heroicons",
-  "version": "2.0.15",
+  "version": "2.0.15-rc.0",
   "description": "Svelte wrappers for the Heroicons library.",
   "homepage": "https://github.com/robotpajamas/svelte-heroicons",
   "repository": {
@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && npm run package",
     "preview": "vite preview",
     "prepackage": "node build",
     "package": "svelte-kit sync && svelte-package && publint",
