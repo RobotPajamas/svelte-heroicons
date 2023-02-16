@@ -1,3 +1,10 @@
 {
-  "printWidth": 100
+  "bracketSameLine": true,
+  "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }],
+  "plugins": ["prettier-plugin-svelte"],
+  "organizeImportsSkipDestructiveCodeActions": true,
+  "pluginSearchDirs": false,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "trailingComma": "es5"
 }
