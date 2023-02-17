@@ -12,13 +12,17 @@
     "url": "https://github.com/robotpajamas/svelte-heroicons/issues"
   },
   "license": "MIT",
-  "files": ["dist"],
+  "files": [
+    "dist/"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
+  "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
   "keywords": [
