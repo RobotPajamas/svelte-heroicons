@@ -1,6 +1,6 @@
 {
   "name": "@robotpajamas/svelte-heroicons",
-  "version": "2.0.15-rc.0",
+  "version": "2.0.15-rc.7",
   "description": "Svelte wrappers for the Heroicons library.",
   "homepage": "https://github.com/robotpajamas/svelte-heroicons",
   "repository": {
@@ -20,11 +20,45 @@
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./mini": {
+      "types": "./dist/mini/index.d.ts",
+      "svelte": "./dist/mini/index.js"
+    },
+    "./mini/*": {
+      "types": "./dist/mini/*.d.ts",
+      "svelte": "./dist/mini/*.js"
+    },
+    "./outline": {
+      "types": "./dist/outline/index.d.ts",
+      "svelte": "./dist/outline/index.js"
+    },
+    "./outline/*": {
+      "types": "./dist/outline/*.d.ts",
+      "svelte": "./dist/outline/*.js"
+    },
+    "./solid": {
+      "types": "./dist/solid/index.d.ts",
+      "svelte": "./dist/solid/index.js"
+    },
+    "./solid/*": {
+      "types": "./dist/solid/*.d.ts",
+      "svelte": "./dist/solid/*.js"
+    }
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "svelte",
     "svelte3",
@@ -37,7 +71,7 @@
     "dev": "vite dev",
     "build": "vite build && npm run package",
     "preview": "vite preview",
-    "prepackage": "node build",
+    "prepackage": "node generate",
     "package": "svelte-kit sync && svelte-package && publint",
     "prepublishOnly": "npm run package && publint",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -52,7 +86,7 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.7.1",
-    "@sveltejs/package": "^2.0.0",
+    "@sveltejs/package": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
     "eslint": "^8.34.0",

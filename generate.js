@@ -3,7 +3,7 @@ import { generateFromFolder } from "svg-to-svelte";
 
 const options = { clean: true };
 
-async function build() {
+async function generate() {
   await generateFromFolder("node_modules/heroicons/20/solid", "src/lib/mini", options);
   let index = await fs.readFile("src/lib/mini/index.js", { encoding: "utf-8" });
   index = index
@@ -26,4 +26,4 @@ async function build() {
   await fs.writeFile("src/lib/outline/index.js", index);
 }
 
-build();
+generate();
