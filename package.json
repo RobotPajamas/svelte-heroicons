@@ -1,53 +1,84 @@
 {
-  "name": "@rgossiaux/svelte-heroicons",
+  "name": "@robotpajamas/svelte-heroicons",
+  "version": "2.0.15-rc.3",
   "description": "Svelte wrappers for the Heroicons library.",
+  "homepage": "https://github.com/robotpajamas/svelte-heroicons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robotpajamas/svelte-heroicons"
+  },
+  "author": "SJ <suresh@robotpajamas.com>",
+  "bugs": {
+    "url": "https://github.com/robotpajamas/svelte-heroicons/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "mini/",
+    "outline/",
+    "solid/",
+    "index.d.ts",
+    "index.js",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./mini": "./mini/index.js",
+    "./mini/*": "./mini/*/index.js",
+    "./outline": "./outline/index.js",
+    "./outline/*": "./outline/*/index.js",
+    "./solid": "./solid/index.js",
+    "./solid/*": "./solid/*/index.js"
+  },
+  "svelte": "./index.js",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "svelte",
     "svelte3",
     "sveltejs",
     "heroicons",
+    "tailwindcss",
     "icons"
   ],
-  "author": "Ryan Gossiaux <ryan.gossiaux@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rgossiaux/svelte-heroicons/issues"
-  },
-  "homepage": "https://github.com/rgossiaux/svelte-heroicons",
-  "repository": "github:rgossiaux/svelte-heroicons",
-  "version": "0.1.2",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "prepackage": "node build",
-    "package": "svelte-kit package",
-    "preview": "svelte-kit preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+    "dev": "vite dev",
+    "build": "vite build && npm run package",
+    "preview": "vite preview",
+    "prepackage": "node generate",
+    "package": "svelte-kit sync && svelte-package && node workaround && publint dist",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "format": "prettier --ignore-path .gitignore --write .",
+    "lint": "prettier --ignore-path .gitignore --check . && eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run format && eslint --ignore-path .gitignore . --fix"
   },
   "peerDependencies": {
-    "svelte": "^3.44.0"
+    "svelte": "^3.54.0"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "next",
-    "@sveltejs/kit": "next",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
-    "@typescript-eslint/parser": "^4.31.1",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-svelte3": "^3.2.1",
-    "heroicons": "^1.0.5",
-    "prettier": "^2.4.1",
-    "prettier-plugin-svelte": "^2.4.0",
-    "svelte": "^3.44.0",
-    "svelte-check": "^2.2.6",
-    "svelte-preprocess": "^4.9.4",
-    "svelte2tsx": "^0.4.12",
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/kit": "^1.7.1",
+    "@sveltejs/package": "^2.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "heroicons": "^2.0.15",
+    "prettier": "^2.8.4",
+    "prettier-plugin-svelte": "^2.9.0",
+    "publint": "^0.1.9",
+    "svelte": "^3.55.1",
+    "svelte-check": "^3.0.3",
+    "svelte2tsx": "^0.6.1",
     "svg-to-svelte": "^2.2.1",
-    "tslib": "^2.3.1",
-    "typescript": "^4.5.4"
-  },
-  "type": "module"
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1"
+  }
 }
