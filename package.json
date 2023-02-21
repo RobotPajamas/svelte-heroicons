@@ -13,27 +13,27 @@
   },
   "license": "MIT",
   "files": [
-    "mini/",
-    "outline/",
-    "solid/",
-    "index.d.ts",
-    "index.js",
-    "README.md",
-    "LICENSE",
-    "package.json"
+    "dist/"
   ],
   "exports": {
-    ".": "./index.js",
-    "./package.json": "./package.json",
-    "./mini": "./mini/index.js",
-    "./mini/*": "./mini/*/index.js",
-    "./outline": "./outline/index.js",
-    "./outline/*": "./outline/*/index.js",
-    "./solid": "./solid/index.js",
-    "./solid/*": "./solid/*/index.js"
+    ".": "./dist/index.js",
+    "./package.json": "./dist/package.json",
+    "./mini": "./dist/mini/index.js",
+    "./mini/*": "./dist/mini/*/index.js",
+    "./outline": "./dist/outline/index.js",
+    "./outline/*": "./dist/outline/*/index.js",
+    "./solid": "./dist/solid/index.js",
+    "./solid/*": "./dist/solid/*/index.js"
   },
-  "svelte": "./index.js",
+  "svelte": "./dist/index.js",
   "type": "module",
+  "typesVersions": {
+    "*": {
+      "dist/*": [
+        "dist/*"
+      ]
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -50,7 +50,7 @@
     "build": "vite build && npm run package",
     "preview": "vite preview",
     "prepackage": "node generate",
-    "package": "svelte-kit sync && svelte-package && node workaround && publint dist",
+    "package": "svelte-kit sync && svelte-package && publint",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --ignore-path .gitignore --write .",
@@ -62,7 +62,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/kit": "^1.7.1",
+    "@sveltejs/kit": "^1.8.3",
     "@sveltejs/package": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
