@@ -1,6 +1,6 @@
 {
   "name": "@robotpajamas/svelte-heroicons",
-  "version": "2.0.15-rc.2",
+  "version": "2.0.15-rc.3",
   "description": "Svelte wrappers for the Heroicons library.",
   "homepage": "https://github.com/robotpajamas/svelte-heroicons",
   "repository": {
@@ -13,37 +13,27 @@
   },
   "license": "MIT",
   "files": [
-    "dist/"
+    "mini/",
+    "outline/",
+    "solid/",
+    "index.d.ts",
+    "index.js",
+    "README.md",
+    "LICENSE",
+    "package.json"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
-    },
+    ".": "./index.js",
     "./package.json": "./package.json",
-    "./mini": "./dist/mini/index.js",
-    "./mini/*": "./dist/mini/*/index.js",
-    "./outline": "./dist/outline/index.js",
-    "./outline/*": "./dist/outline/*/index.js",
-    "./solid": {
-      "types": "./dist/solid/index.d.ts",
-      "svelte": "./dist/solid/index.js"
-    },
-    "./solid/*": {
-      "types": "./dist/solid/*.d.ts",
-      "svelte": "./dist/solid/*.js"
-    }
+    "./mini": "./mini/index.js",
+    "./mini/*": "./mini/*/index.js",
+    "./outline": "./outline/index.js",
+    "./outline/*": "./outline/*/index.js",
+    "./solid": "./solid/index.js",
+    "./solid/*": "./solid/*/index.js"
   },
-  "svelte": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "svelte": "./index.js",
   "type": "module",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "dist/*"
-      ]
-    }
-  },
   "publishConfig": {
     "access": "public"
   },
@@ -60,8 +50,7 @@
     "build": "vite build && npm run package",
     "preview": "vite preview",
     "prepackage": "node generate",
-    "package": "svelte-kit sync && svelte-package && publint",
-    "prepublishOnly": "npm run package && publint",
+    "package": "svelte-kit sync && svelte-package && node workaround && publint dist",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --ignore-path .gitignore --write .",
