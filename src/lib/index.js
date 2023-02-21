@@ -7,7 +7,7 @@ export default new Proxy(
       }
 
       throw new Error(
-        `Importing from \`@heroicons/react\` directly is not supported. Please import from either \`@heroicons/react/20/solid\`, \`@heroicons/react/24/solid\`, or \`@heroicons/react/24/outline\` instead.`
+        `Importing from \`@robotpajamas/svelte-heroicons\` directly is not supported. Please import from either \`@robotpajamas/svelte-heroicons/mini\`, \`@robotpajamas/svelte-heroicons/outline\`, or \`@robotpajamas/svelte-heroicons/solid\` instead.`
       );
     },
   }
