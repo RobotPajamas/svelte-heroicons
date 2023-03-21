@@ -1,6 +1,6 @@
 {
   "name": "@robotpajamas/svelte-heroicons",
-  "version": "2.0.15-rc.3",
+  "version": "2.0.15-rc.5",
   "description": "Svelte wrappers for the Heroicons library.",
   "homepage": "https://github.com/robotpajamas/svelte-heroicons",
   "repository": {
@@ -29,8 +29,26 @@
   "type": "module",
   "typesVersions": {
     "*": {
-      "dist/*": [
-        "dist/*"
+      "index": [
+        "./dist/index.js"
+      ],
+      "mini": [
+        "./dist/mini/index.d.ts"
+      ],
+      "mini/*": [
+        "./dist/mini/*/index.d.ts"
+      ],
+      "outline": [
+        "./dist/outline/index.d.ts"
+      ],
+      "outline/*": [
+        "./dist/outline/*/index.d.ts"
+      ],
+      "solid": [
+        "./dist/solid/index.d.ts"
+      ],
+      "solid/*": [
+        "./dist/solid/*/index.d.ts"
       ]
     }
   },
